@@ -1,6 +1,9 @@
 import { AnimatePresence } from "framer-motion";
 import { Suspense, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import Preloader from "./components/preloader/Preloader";
 import { Transition } from "./components/transition/Transition";
 import Home from "./pages/Home";
 import NoPage from "./pages/NoPage";
@@ -16,7 +19,8 @@ function App() {
 
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Navbar />
+      <Suspense fallback={<Preloader />}>
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route index element={<Transition OgPage={Home} />} />
@@ -24,6 +28,7 @@ function App() {
           </Routes>
         </AnimatePresence>
       </Suspense>
+      <Footer />
     </>
   );
 }
