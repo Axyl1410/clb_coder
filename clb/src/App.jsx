@@ -1,5 +1,5 @@
 import { AnimatePresence } from "framer-motion";
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { Transition } from "./components/transition/Transition";
 import Home from "./pages/Home";
@@ -13,8 +13,6 @@ function App() {
       window.scrollTo(0, 0);
     }, 1000);
   }, [location.pathname]);
-
-  const [count, setCount] = useState(0);
 
   return (
     <>
