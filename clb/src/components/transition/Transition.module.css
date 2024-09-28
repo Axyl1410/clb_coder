@@ -7,7 +7,7 @@
   background: rgb(0, 0, 0);
   transform-origin: bottom;
   pointer-events: none;
-  z-index: 2;
+  z-index: 20;
 }
 
 .slideOut {
@@ -19,5 +19,5 @@
   background: rgb(0, 0, 0);
   transform-origin: top;
   pointer-events: none;
-  z-index: 2;
+  z-index: 20;
 }

@@ -19,16 +19,20 @@ function App() {
 
   return (
     <>
-      <Navbar />
-      <Suspense fallback={<Preloader />}>
-        <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
-            <Route index element={<Transition OgPage={Home} />} />
-            <Route path="*" element={<Transition OgPage={NoPage} />} />
-          </Routes>
-        </AnimatePresence>
-      </Suspense>
-      <Footer />
+      <div className="bg-primary px-4 min-h-screen">
+        <Navbar />
+        <div className="pt-[70px] container">
+          <Suspense fallback={<Preloader />}>
+            <AnimatePresence mode="wait">
+              <Routes location={location} key={location.pathname}>
+                <Route index element={<Transition OgPage={Home} />} />
+                <Route path="*" element={<Transition OgPage={NoPage} />} />
+              </Routes>
+            </AnimatePresence>
+          </Suspense>
+        </div>
+        <Footer />
+      </div>
     </>
   );
 }
